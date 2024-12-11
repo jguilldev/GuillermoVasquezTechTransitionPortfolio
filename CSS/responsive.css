@@ -1,0 +1,299 @@
+/* General Reset (Mobile First - 320px) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  background-color: #1C1C1C; 
+  color: #EDEDED; 
+}
+
+/* Inicio Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5vh 2vw;
+  background: linear-gradient(135deg, #1C1C1C, #2B3A42); 
+  border-bottom: 2px solid #E63946;
+}
+
+header .logo img {
+  width: 20vw;
+  max-width: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+header .logo img:hover {
+  transform: scale(1.1); 
+}
+
+.nav {
+  margin-top: 2vh;
+  width: 100%;
+  text-align: center;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 2vh 0;
+}
+
+.ancla_header {
+  text-decoration: none;
+  color: #E63946;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.ancla_header:hover {
+  color: #9F7AEA ;
+  transform: scale(1.1); 
+  transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+/* final header  */
+
+/* Inicio Parallax Container (Hero Section) */
+.parallax-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  color: #FFFFFF; 
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 2; 
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateX(-100px); 
+  transition: all 1.5s ease;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateX(100px); 
+  transition: all 1.5s ease;
+}
+
+.content.show h1 {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.content.show p {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+/* Final Parallax Container (Hero Section) */
+
+
+/* inicio clases footer  */
+footer {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1C1C1C, #2B3A42); 
+  border-top: 2px solid #E63946; 
+}
+
+footer a {
+  margin: 0 15px; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-decoration: none; 
+  margin: 10px; 
+}
+
+.footer .tooltiptext {
+  margin-top: 5px; 
+  font-size: 0.9rem; 
+  color: #EDEDED; 
+  text-align: center; 
+  display: block; 
+}
+
+footer img {
+  width: 24px; 
+  height: 24px;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.2); 
+}
+
+/* Breakpoints para ajustar tamaño de los íconos */
+@media (min-width: 425px) {
+  footer img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  footer img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer img {
+    width: 50px;
+    height: 50px; 
+  }
+}
+
+
+/* final clases footer  */
+
+
+/*  Inicio Breakpoints */
+
+/* Inicio Small Devices - 375px */
+@media (min-width: 375px) {
+  .content h1 {
+    font-size: 2.8rem;
+  }
+
+  .content p {
+    font-size: 1.3rem;
+  }
+}
+/* Final Small Devices - 375px */
+
+/* Inicio Small Devices - 425px */
+@media (min-width: 425px) {
+  header {
+    padding: 4vh 4vw;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+  }
+}
+/* final Small Devices - 425px */
+
+
+/* Inicio Tablets - 768px */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3vh 5vw;
+  }
+
+  header .logo img {
+    width: 10vw;
+    max-width: 120px;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav ul li {
+    margin: 0 1vw;
+  }
+
+  .ancla_header {
+    font-size: 1rem;
+  }
+}
+/* final Tablets - 768px */
+
+
+/* Inicio Laptops - 1024px */
+@media (min-width: 1024px) {
+  .content h1 {
+    font-size: 5rem;
+  }
+
+  .content p {
+    font-size: 1.3rem;
+  }
+
+  .ancla_header{
+    font-size: 1.3rem;
+  }
+}
+/* Final Laptops - 1024px */
+
+
+/* Inicio Large Screens - 1440px */
+@media (min-width: 1440px) {
+  header {
+    padding: 5vh 10vw;
+  }
+
+  header .logo img {
+    max-width: 150px;
+  }
+
+  .content h1 {
+    font-size: 4rem;
+  }
+
+  .content p {
+    font-size: 1.8rem;
+  }
+
+  .ancla_header{
+    font-size: 1.5rem;
+  }
+}
+/* Final Large Screens - 1440px */
