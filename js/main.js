@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".carrusel-item");
   let index = 0;
 
-  const avanzarCarrusel = () => {
+  const moveCarrusel = () => {
     index++;
     if (index >= items.length) {
       index = 0;
@@ -34,9 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (carrusel) {
-    setInterval(avanzarCarrusel, 3000); // Cambia de imagen cada 3 segundos
+    setInterval(moveCarrusel, 3000); // Cambia de imagen cada 3 segundos
   }
 });
+
+
 // Fin Animación Carrusel
 
   

@@ -236,7 +236,6 @@ footer img:hover {
 }
 /* final clases footer  */
 
-/* inicio carrusel */
 /* Inicio Sección Carrusel */
 .carrusel-trabajos {
   padding: 2rem;
@@ -274,7 +273,7 @@ footer img:hover {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-/* final carrusel */
+/* final seccion carrusel  */
 
 /* -----------------------------------------------inicio breakpoints -------------------------------- */
 
@@ -284,6 +283,19 @@ footer img:hover {
     flex-basis: 100%; /* El correo ocupa toda la fila */
     text-align: center; /* Centra el texto */
   }
+
+  /* inicio seccion carrusel min 320  */
+  .carrusel-item img {
+    height: 150px; /* Altura para pantallas pequeñas */
+  }
+}
+
+@media (min-width: 768px) {
+  .carrusel-item img {
+    height: 480px; /* Altura para tablets */
+  }
+
+  /* final seccion carrusel min 320  */
 }
 
 
@@ -293,6 +305,7 @@ footer img:hover {
     width: 30px;
     height: 30px;
   }
+  
 }
 
 @media (min-width: 768px) { 
@@ -319,6 +332,12 @@ footer img:hover {
     display: none; /* Oculta la imagen móvil */
   }
   /* final seccion sobre mi en end point 768px  */
+
+  /* inicio seccion carrusel min 768  */
+  .carrusel-item img {
+    height: 400px; /* Altura para tablets */
+  }
+  /* final seccion carrusel min 768  */
 }
 
 
@@ -327,6 +346,11 @@ footer img:hover {
     width: 50px;
     height: 50px; 
   }
+    /* inicio seccion carrusel min 1024  */
+    .carrusel-item img {
+      height: 800px; /* Altura para laptops */
+    }
+    /* final seccion carrusel min 1024  */
 }
 /* final clases footer  */
 
@@ -430,6 +454,12 @@ footer img:hover {
     font-size: 2rem;
   }
   /* final clases biografia sobre mi */
+
+  /* inicio carruse min 1024 */
+  .carrusel-item img {
+    height: 550px; /* Altura para laptops */
+  }
+  /* final carruse min 1024 */
 }
 /* Final Laptops - 1024px */
 
@@ -455,5 +485,10 @@ footer img:hover {
   .ancla_header{
     font-size: 1.5rem;
   }
+  /* inicio carrusel min 1024 */
+  .carrusel-item img {
+    height: 780px; /* Altura para pantallas grandes */
+  }
+  /* final carrusel min 1024 */
 }
 /* Final Large Screens - 1440px */
