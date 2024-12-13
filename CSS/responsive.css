@@ -136,44 +136,156 @@ header .logo img:hover {
 
 /* Final Parallax Container (Hero Section) */
 
+/* inicio seccion Sobre mi  */
+/* Sección Sobre Mí */
+.sobre-mi {
+  display: flex;
+  flex-direction: column; /* Por defecto, columna para dispositivos móviles */
+  padding: 2rem;
+  background-color: #1C1C1C; /* Fondo oscuro */
+  color: #EDEDED; /* Texto claro */
+}
+
+/* Contenido por defecto */
+.sobre-mi-contenido {
+  display: flex;
+  flex-direction: column; /* Default para móvil */
+  gap: 1.5rem;
+}
+
+/* Biografía */
+.biografia {
+  flex: 1;
+  text-align: justify;
+}
+
+.biografia h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem; /* Tamaño ajustado para pantallas pequeñas */
+  text-align: center; /* Centrado */
+  margin-bottom: 1rem;
+  color: #E63946; /* Rojo suave */
+  line-height: 1.2; /* Ajuste para evitar separación excesiva */
+  margin-top: 2rem;
+}
+
+/* Imagen para móvil (solo visible en pantallas pequeñas) */
+.imagen-perfil-movil {
+  display: block; /* Visible por defecto */
+  max-width: 100%; /* Ajusta la imagen al contenedor */
+  margin: 1rem 0;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Imagen para pantallas grandes (oculta en móviles) */
+.imagen-perfil {
+  flex: 1;
+  display: none; /* Oculta por defecto */
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen-perfil img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+/* final seccion sobre mi */
+
 
 /* inicio clases footer  */
-footer {
+.footer {
   margin-top: 5%;
   display: flex;
+  flex-wrap: wrap; /* Permite que los elementos salten a nuevas líneas */
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #1C1C1C, #2B3A42); 
-  border-top: 2px solid #E63946; 
+  background: linear-gradient(135deg, #1C1C1C, #2B3A42);
+  border-top: 2px solid #E63946;
 }
 
 footer a {
-  margin: 0 15px; 
+  margin: 10px; /* Espaciado entre los enlaces */
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  text-decoration: none; 
-  margin: 10px; 
-}
-
-.footer .tooltiptext {
-  margin-top: 5px; 
-  font-size: 0.9rem; 
-  color: #EDEDED; 
-  text-align: center; 
-  display: block; 
+  flex-direction: column; /* Coloca el icono y el texto en columna */
+  align-items: center;
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  flex: 1 1 auto; /* Ajusta el ancho automáticamente */
+  max-width: 100px; /* Ancho máximo de cada ícono */
 }
 
 footer img {
-  width: 24px; 
+  width: 24px; /* Tamaño base del icono */
   height: 24px;
   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 footer img:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
 }
+
+.footer .tooltiptext {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #EDEDED;
+  text-align: center;
+  display: block;
+}
+/* final clases footer  */
+
+/* inicio carrusel */
+/* Inicio Sección Carrusel */
+.carrusel-trabajos {
+  padding: 2rem;
+  background-color: #2B3A42;
+  color: #EDEDED;
+  text-align: center;
+}
+
+.carrusel-trabajos h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #E63946;
+}
+
+.carrusel-contenedor {
+  overflow: hidden; /* Oculta las partes fuera del carrusel */
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.carrusel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+/* final carrusel */
+
+/* -----------------------------------------------inicio breakpoints -------------------------------- */
+
+/* Punto de quiebre para pantallas pequeñas (320px) */
+@media (max-width: 320px) {
+  .footer a:nth-child(4) {
+    flex-basis: 100%; /* El correo ocupa toda la fila */
+    text-align: center; /* Centra el texto */
+  }
+}
+
 
 /* Breakpoints para ajustar tamaño de los íconos */
 @media (min-width: 425px) {
@@ -183,12 +295,32 @@ footer img:hover {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
   footer img {
     width: 40px;
     height: 40px;
   }
+  /* inicio seccion sobre mi en end point 768px  */
+  .sobre-mi-contenido {
+    flex-direction: column; /* Cambia a columna para que la imagen esté arriba */
+  }
+
+  .imagen-perfil {
+    display: flex; /* Asegura que sea visible */
+    justify-content: center;
+    margin-bottom: 1rem; /* Espaciado debajo de la imagen */
+  }
+
+  .biografia {
+    order: 1; /* La biografía aparece después de la imagen */
+  }
+
+  .imagen-perfil-movil {
+    display: none; /* Oculta la imagen móvil */
+  }
+  /* final seccion sobre mi en end point 768px  */
 }
+
 
 @media (min-width: 1024px) {
   footer img {
@@ -196,9 +328,30 @@ footer img:hover {
     height: 50px; 
   }
 }
-
-
 /* final clases footer  */
+
+
+
+/* Adaptación a pantallas grandes */
+@media (min-width: 768px) {
+  .contenido {
+    flex-direction: row; /* Divide en dos columnas */
+  }
+
+  .bio-imagen {
+    display: flex; /* Muestra la imagen en pantallas grandes */
+  }
+
+  .bio-imagen-movil {
+    display: none; /* Oculta la imagen móvil */
+  }
+
+  .bio-texto h2 {
+    font-size: 2rem;
+  }
+}
+
+/* fin biografia */
 
 
 /*  Inicio Breakpoints */
@@ -212,6 +365,8 @@ footer img:hover {
   .content p {
     font-size: 1.3rem;
   }
+
+
 }
 /* Final Small Devices - 375px */
 
@@ -270,6 +425,11 @@ footer img:hover {
   .ancla_header{
     font-size: 1.3rem;
   }
+  /* inicio clases biografia sobre mi  */
+  .biografia h2 {
+    font-size: 2rem;
+  }
+  /* final clases biografia sobre mi */
 }
 /* Final Laptops - 1024px */
 

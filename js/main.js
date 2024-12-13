@@ -1,3 +1,4 @@
+// inicio animacion de titulo y subtitulo del hero 
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
       (entries, observer) => {
@@ -16,4 +17,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.querySelector(".content");
     observer.observe(content);
   });
+// final animacion de titulo y subtitulo del hero 
+
+// Inicio Animación Carrusel
+document.addEventListener("DOMContentLoaded", () => {
+  const carrusel = document.querySelector(".carrusel");
+  const items = document.querySelectorAll(".carrusel-item");
+  let index = 0;
+
+  const avanzarCarrusel = () => {
+    index++;
+    if (index >= items.length) {
+      index = 0;
+    }
+    carrusel.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  if (carrusel) {
+    setInterval(avanzarCarrusel, 3000); // Cambia de imagen cada 3 segundos
+  }
+});
+// Fin Animación Carrusel
+
   
