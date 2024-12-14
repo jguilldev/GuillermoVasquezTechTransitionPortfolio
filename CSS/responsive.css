@@ -9,8 +9,8 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
-  background-color: #1C1C1C; 
-  color: #EDEDED; 
+  background-color: #1C1C1C;
+  color: #EDEDED;
 }
 
 /* Inicio Header */
@@ -21,8 +21,17 @@ header {
   justify-content: center;
   width: 100%;
   padding: 5vh 2vw;
-  background: linear-gradient(135deg, #1C1C1C, #2B3A42); 
+  background: linear-gradient(135deg, #1C1C1C, #2B3A42);
   border-bottom: 2px solid #E63946;
+  position: relative;
+  z-index: 10;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
 }
 
 header .logo img {
@@ -33,7 +42,20 @@ header .logo img {
 }
 
 header .logo img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
+}
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #E63946;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 15;
 }
 
 .nav {
@@ -43,10 +65,23 @@ header .logo img:hover {
 }
 
 .nav ul {
-  display: flex;
+  display: none;
   flex-direction: column;
   list-style-type: none;
   padding: 0;
+}
+
+.nav ul.active {
+  display: flex;
+  background-color: #1C1C1C;
+  padding: 1rem;
+  border: 1px solid #E63946;
+  border-radius: 10px;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 80%;
+  z-index: 20;
 }
 
 .nav ul li {
@@ -62,12 +97,12 @@ header .logo img:hover {
 }
 
 .ancla_header:hover {
-  color: #9F7AEA ;
-  transform: scale(1.1); 
-  transition: transform 0.3s ease, color 0.3s ease; 
+  color: #9F7AEA;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* final header  */
+/* Final Header */
 
 /* Inicio Parallax Container (Hero Section) */
 .parallax-container {
@@ -86,7 +121,7 @@ header .logo img:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -102,17 +137,17 @@ header .logo img:hover {
 
 .content {
   position: relative;
-  color: #FFFFFF; 
+  color: #FFFFFF;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   opacity: 0;
-  transform: translateX(-100px); 
+  transform: translateX(-100px);
   transition: all 1.5s ease;
 }
 
@@ -120,40 +155,37 @@ header .logo img:hover {
   font-size: 1.2rem;
   margin-top: 1rem;
   opacity: 0;
-  transform: translateX(100px); 
+  transform: translateX(100px);
   transition: all 1.5s ease;
 }
 
 .content.show h1 {
   opacity: 1;
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
 .content.show p {
   opacity: 1;
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
-/* Final Parallax Container (Hero Section) */
+/* Final Hero Section */
 
-/* inicio seccion Sobre mi  */
-/* Sección Sobre Mí */
+/* Inicio Sección Sobre Mí */
 .sobre-mi {
   display: flex;
-  flex-direction: column; /* Por defecto, columna para dispositivos móviles */
+  flex-direction: column;
   padding: 2rem;
-  background-color: #1C1C1C; /* Fondo oscuro */
-  color: #EDEDED; /* Texto claro */
+  background-color: #1C1C1C;
+  color: #EDEDED;
 }
 
-/* Contenido por defecto */
 .sobre-mi-contenido {
   display: flex;
-  flex-direction: column; /* Default para móvil */
+  flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Biografía */
 .biografia {
   flex: 1;
   text-align: justify;
@@ -161,101 +193,33 @@ header .logo img:hover {
 
 .biografia h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem; /* Tamaño ajustado para pantallas pequeñas */
-  text-align: center; /* Centrado */
+  font-size: 1.8rem;
+  text-align: center;
   margin-bottom: 1rem;
-  color: #E63946; /* Rojo suave */
-  line-height: 1.2; /* Ajuste para evitar separación excesiva */
+  color: #E63946;
+  line-height: 1.2;
   margin-top: 2rem;
 }
 
-/* Imagen para móvil (solo visible en pantallas pequeñas) */
 .imagen-perfil-movil {
-  display: block; /* Visible por defecto */
-  max-width: 100%; /* Ajusta la imagen al contenedor */
-  margin: 1rem 0;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
-}
-
-/* Imagen para pantallas grandes (oculta en móviles) */
-.imagen-perfil {
-  flex: 1;
-  display: none; /* Oculta por defecto */
-  align-items: center;
-  justify-content: center;
-}
-
-.imagen-perfil img {
+  display: block;
   max-width: 100%;
-  height: auto;
+  margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-/* final seccion sobre mi */
 
-
-/* inicio clases footer  */
-.footer {
-  margin-top: 5%;
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos salten a nuevas líneas */
+.imagen-perfil {
+  flex: 1;
+  display: none;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #1C1C1C, #2B3A42);
-  border-top: 2px solid #E63946;
 }
 
-footer a {
-  margin: 10px; /* Espaciado entre los enlaces */
-  display: flex;
-  flex-direction: column; /* Coloca el icono y el texto en columna */
-  align-items: center;
-  text-decoration: none; /* Quita el subrayado de los enlaces */
-  flex: 1 1 auto; /* Ajusta el ancho automáticamente */
-  max-width: 100px; /* Ancho máximo de cada ícono */
-}
-
-footer img {
-  width: 24px; /* Tamaño base del icono */
-  height: 24px;
-  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-}
-
-footer img:hover {
-  transform: scale(1.2); /* Efecto de zoom al pasar el cursor */
-}
-
-.footer .tooltiptext {
-  margin-top: 5px;
-  font-size: 0.9rem;
-  color: #EDEDED;
-  text-align: center;
-  display: block;
-}
-/* final clases footer  */
-
-/* Inicio Sección Carrusel */
+/* Carrusel */
 .carrusel-trabajos {
   padding: 2rem;
   background-color: #2B3A42;
-  color: #EDEDED;
-  text-align: center;
-}
-
-.carrusel-trabajos h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #E63946;
-}
-
-.carrusel-contenedor {
-  overflow: hidden; /* Oculta las partes fuera del carrusel */
-  position: relative;
-  max-width: 80%;
-  margin: 0 auto;
 }
 
 .carrusel {
@@ -265,206 +229,114 @@ footer img:hover {
 
 .carrusel-item {
   min-width: 100%;
-  transition: transform 0.5s ease-in-out;
 }
 
 .carrusel-item img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-/* final seccion carrusel  */
-
-/* -----------------------------------------------inicio breakpoints -------------------------------- */
-
-/* Punto de quiebre para pantallas pequeñas (320px) */
-@media (max-width: 320px) {
-  .footer a:nth-child(4) {
-    flex-basis: 100%; /* El correo ocupa toda la fila */
-    text-align: center; /* Centra el texto */
-  }
-
-  /* inicio seccion carrusel min 320  */
-  .carrusel-item img {
-    height: 150px; /* Altura para pantallas pequeñas */
-  }
 }
 
-@media (min-width: 768px) {
-  .carrusel-item img {
-    height: 480px; /* Altura para tablets */
-  }
-
-  /* final seccion carrusel min 320  */
+/* Footer */
+.footer {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1C1C1C, #2B3A42);
+  border-top: 2px solid #E63946;
 }
 
-
-/* Breakpoints para ajustar tamaño de los íconos */
-@media (min-width: 425px) {
-  footer img {
-    width: 30px;
-    height: 30px;
-  }
-  
+.footer a {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  max-width: 100px;
 }
 
-@media (min-width: 768px) { 
-  footer img {
-    width: 40px;
-    height: 40px;
-  }
-  /* inicio seccion sobre mi en end point 768px  */
-  .sobre-mi-contenido {
-    flex-direction: column; /* Cambia a columna para que la imagen esté arriba */
-  }
-
-  .imagen-perfil {
-    display: flex; /* Asegura que sea visible */
-    justify-content: center;
-    margin-bottom: 1rem; /* Espaciado debajo de la imagen */
-  }
-
-  .biografia {
-    order: 1; /* La biografía aparece después de la imagen */
-  }
-
-  .imagen-perfil-movil {
-    display: none; /* Oculta la imagen móvil */
-  }
-  /* final seccion sobre mi en end point 768px  */
-
-  /* inicio seccion carrusel min 768  */
-  .carrusel-item img {
-    height: 400px; /* Altura para tablets */
-  }
-  /* final seccion carrusel min 768  */
+.footer img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 
-
-@media (min-width: 1024px) {
-  footer img {
-    width: 50px;
-    height: 50px; 
-  }
-    /* inicio seccion carrusel min 1024  */
-    .carrusel-item img {
-      height: 800px; /* Altura para laptops */
-    }
-    /* final seccion carrusel min 1024  */
-}
-/* final clases footer  */
-
-
-
-/* Adaptación a pantallas grandes */
-@media (min-width: 768px) {
-  .contenido {
-    flex-direction: row; /* Divide en dos columnas */
-  }
-
-  .bio-imagen {
-    display: flex; /* Muestra la imagen en pantallas grandes */
-  }
-
-  .bio-imagen-movil {
-    display: none; /* Oculta la imagen móvil */
-  }
-
-  .bio-texto h2 {
-    font-size: 2rem;
-  }
+.footer img:hover {
+  transform: scale(1.2);
 }
 
-/* fin biografia */
-
-
-/*  Inicio Breakpoints */
-
-/* Inicio Small Devices - 375px */
-@media (min-width: 375px) {
-  .content h1 {
-    font-size: 2.8rem;
-  }
-
-  .content p {
-    font-size: 1.3rem;
-  }
-
-
+.footer .tooltiptext {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #EDEDED;
 }
-/* Final Small Devices - 375px */
 
-/* Inicio Small Devices - 425px */
-@media (min-width: 425px) {
-  header {
-    padding: 4vh 4vw;
-  }
-
-  .content h1 {
-    font-size: 3rem;
-  }
-}
-/* final Small Devices - 425px */
-
-
-/* Inicio Tablets - 768px */
+/* Breakpoints */
 @media (min-width: 768px) {
   header {
     flex-direction: row;
     justify-content: space-between;
-    padding: 3vh 5vw;
+    align-items: center;
   }
 
-  header .logo img {
-    width: 10vw;
-    max-width: 120px;
+  .logo {
+    justify-content: flex-start;
+    display: flex;
   }
 
   .nav ul {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around; /* Distribuye las anclas */
+    width: 80%;
   }
 
-  .nav ul li {
-    margin: 0 1vw;
+  .sobre-mi-contenido {
+    flex-direction: row;
   }
 
-  .ancla_header {
-    font-size: 1rem;
+  .imagen-perfil {
+    display: flex;
+  }
+
+  .imagen-perfil-movil {
+    display: none;
+  }
+
+  .carrusel-item img {
+    height: 400px;
   }
 }
-/* final Tablets - 768px */
 
-
-/* Inicio Laptops - 1024px */
 @media (min-width: 1024px) {
+  header {
+    padding: 3vh 5vw;
+  }
+
   .content h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
 
   .content p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
-  .ancla_header{
-    font-size: 1.3rem;
+  .ancla_header {
+    font-size: 1.2rem;
   }
-  /* inicio clases biografia sobre mi  */
-  .biografia h2 {
-    font-size: 2rem;
-  }
-  /* final clases biografia sobre mi */
 
-  /* inicio carruse min 1024 */
   .carrusel-item img {
-    height: 550px; /* Altura para laptops */
+    height: 600px;
   }
-  /* final carruse min 1024 */
+
+  .nav ul {
+    justify-content: space-around;
+    width: 80%;
+  }
 }
-/* Final Laptops - 1024px */
 
-
-/* Inicio Large Screens - 1440px */
 @media (min-width: 1440px) {
   header {
     padding: 5vh 10vw;
@@ -482,13 +354,11 @@ footer img:hover {
     font-size: 1.8rem;
   }
 
-  .ancla_header{
+  .ancla_header {
     font-size: 1.5rem;
   }
-  /* inicio carrusel min 1024 */
+
   .carrusel-item img {
-    height: 780px; /* Altura para pantallas grandes */
+    height: 780px;
   }
-  /* final carrusel min 1024 */
 }
-/* Final Large Screens - 1440px */
