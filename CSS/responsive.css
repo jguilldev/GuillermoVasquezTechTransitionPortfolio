@@ -35,7 +35,7 @@ header .logo {
 }
 
 header .logo img {
-  width: 20vw;
+  width: 15vw;
   max-width: 100px;
   border-radius: 50%;
   transition: transform 0.3s ease-in-out;
@@ -277,7 +277,7 @@ header .logo img:hover {
 @media (min-width: 768px) {
   header {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
@@ -286,11 +286,44 @@ header .logo img:hover {
     display: flex;
   }
 
+  .nav{
+    display: flex;
+    justify-content: space-evenly;
+  }
   .nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; /* Distribuye las anclas */
+    justify-content: space-between; /* Distribuye el espacio entre las anclas */
+    align-items: center; /* Centra verticalmente */
     width: 80%;
+    margin: 0; /* Elimina márgenes extra */
+    padding: 0; /* Elimina relleno extra */
+    list-style: none; /* Quita los estilos de viñeta */
+  }
+
+  .nav ul li {
+    margin: 0; /* Ajusta el margen a 0 */
+    display: flex;
+    align-items: center; /* Centra el contenido de los <li> */
+  }
+
+  .ancla_header {
+    text-decoration: none;
+    color: #E63946;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: inline-block; /* Permite un mejor control del centrado */
+  }
+
+  .ancla_header:hover {
+    color: #9F7AEA;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  header .logo img{
+    width: 7.2vw;
   }
 
   .sobre-mi-contenido {
@@ -343,7 +376,7 @@ header .logo img:hover {
   }
 
   header .logo img {
-    max-width: 150px;
+    max-width: 15vw;
   }
 
   .content h1 {

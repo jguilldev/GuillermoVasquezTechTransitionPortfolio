@@ -45,25 +45,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Inicio funcionalidad menú hamburguesa
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector("#menu-toggle");
+  const menuToggle = document.querySelector(".menu-toggle"); // Selecciona por clase
   const navMenu = document.querySelector(".nav ul");
 
   if (menuToggle && navMenu) {
+    // Evento para abrir/cerrar el menú hamburguesa
     menuToggle.addEventListener("click", () => {
-      const viewportWidth = window.innerWidth;
-      if (viewportWidth < 768) {
-        navMenu.classList.toggle("active"); // Abre o cierra el menú
+      navMenu.classList.toggle("active");
+    });
+
+    // Evento para cerrar el menú si se hace clic fuera
+    document.addEventListener("click", (e) => {
+      const isClickInsideMenu = menuToggle.contains(e.target) || navMenu.contains(e.target);
+      if (!isClickInsideMenu && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
       }
     });
 
-    document.addEventListener("click", (e) => {
-      if (
-        !menuToggle.contains(e.target) && // No es el botón
-        !navMenu.contains(e.target) && // No es el menú
-        navMenu.classList.contains("active") // Y el menú está abierto
-      ) {
-        navMenu.classList.remove("active"); // Cierra el menú
+    // Asegurar que el menú esté visible en tamaños grandes
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        navMenu.classList.remove("active");
       }
     });
   }
 });
+// Final funcionalidad menú hamburguesa
